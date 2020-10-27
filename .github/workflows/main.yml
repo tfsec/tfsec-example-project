@@ -13,3 +13,4 @@ jobs:
         uses: tfsec/tfsec-sarif-action@master
         with:
           github_token: ${{ secrets.github_token }}
+          branch: ${{ github.head_ref }} 
