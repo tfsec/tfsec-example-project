@@ -1,8 +1,8 @@
 language: go
 
 jobs:
-  # allow_failures:
-  # - name: Run tests
+  allow_failures:
+  - name: Run tests
   include:
   - stage: test
     name: Run tests
