@@ -1,0 +1,15 @@
+name: tfsec
+on: [pull_request]
+jobs:
+  tfsec:
+    name: tfsec sarif report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@master
+
+      - name: tfsec
+        uses: tfsec/tfsec-sarif-action@master
+        with:
+          github_token: ${{ secrets.github_token }}
