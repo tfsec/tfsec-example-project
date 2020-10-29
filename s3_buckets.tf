@@ -67,3 +67,12 @@ resource "aws_s3_bucket" "bucket-with-encryption-and-logging-but-public" {
     }
   }
 }
+
+resource "aws_s3_bucket" "another-bucket-with-logging" {
+  bucket = "my-failing-bucket-no-encryption"
+
+  logging {
+    target_bucket = data.aws_s3_bucket.acme-s3-access-logging.id
+    target_prefix = "my-failing-bucket-not-encryption/logs/"
+  }
+}
