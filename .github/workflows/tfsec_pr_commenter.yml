@@ -1,8 +1,5 @@
-name: tfsec
+name: tfsec-pr-commenter
 on:
-  push:
-    branches:
-      - main
   pull_request:
 jobs:
   tfsec:
