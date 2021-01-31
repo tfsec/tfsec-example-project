@@ -67,3 +67,31 @@ resource "aws_s3_bucket" "bucket-with-encryption-and-logging-but-public" {
     }
   }
 }
+
+resource "aws_s3_bucket" "another-bucket-with-logging" {
+  bucket = "my-failing-bucket-no-encryption"
+
+  logging {
+    target_bucket = data.aws_s3_bucket.acme-s3-access-logging.id
+    target_prefix = "my-failing-bucket-not-encryption/logs/"
+  }
+}
+
+resource "aws_s3_bucket" "not-another-public-one-please" {
+  bucket = "my-public-bucket"
+  acl = "public-read"
+
+  logging {
+    target_bucket = data.aws_s3_bucket.acme-s3-access-logging.id
+    target_prefix = "my-passing-bucket/logs/"
+  }
+
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        sse_algorithm = "AES256"
+      }
+    }
+  }
+}
+
