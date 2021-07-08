@@ -1,5 +1,5 @@
 name: tfsec
-on:
+on: 
   push:
     branches:
       - main
