@@ -14,9 +14,8 @@ jobs:
         uses: actions/checkout@master
 
       - name: tfsec
-        uses: tfsec/tfsec-sarif-action@pass-tfsec-version
+        uses: tfsec/tfsec-sarif-action@master
         with:
-          github_token: ${{ secrets.github_token }}
           sarif_file:  tfsec.sarif
           tfsec_version: v0.42.2
       - name: Upload SARIF file
