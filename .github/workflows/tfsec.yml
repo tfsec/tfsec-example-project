@@ -18,7 +18,7 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           sarif_file:  tfsec.sarif
-
+          tfsec_version: v0.42.2
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v1
         with:
