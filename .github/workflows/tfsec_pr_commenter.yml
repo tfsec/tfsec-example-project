@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: tfsec
-        uses: tfsec/tfsec-pr-commenter-action@e19cfb1383579a0ab2dba9b9afe1eb3432f3180f
+        uses: tfsec/tfsec-pr-commenter-action@ee55c7629d97a00b6f45e1d8fe4eb4d55943d8cd
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           tfsec_version: v0.58.5
