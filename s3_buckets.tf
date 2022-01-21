@@ -5,13 +5,14 @@ data "aws_s3_bucket" "acme-s3-access-logging" {
 }
 
 module "acme_finance_bucket" {
-  source = "./modules/acme_bucket"
+  source      = "./modules/acme_bucket"
   bucket_name = "finance-reports"
   cost_centre = "CC001"
 
   s3_logging_bucket = var.acme_s3_logging_bucket
 }
 
+#tfsec:ignore:aws-s3-enable-versioning
 resource "aws_s3_bucket" "bucket-with-encryption-and-logging" {
   bucket = "my-passing-bucket"
 
@@ -29,6 +30,7 @@ resource "aws_s3_bucket" "bucket-with-encryption-and-logging" {
   }
 }
 
+#tfsec:ignore:aws-s3-enable-versioning
 resource "aws_s3_bucket" "bucket-with-encryption" {
   bucket = "my-failing-bucket-no-logging"
 
@@ -41,6 +43,7 @@ resource "aws_s3_bucket" "bucket-with-encryption" {
   }
 }
 
+#tfsec:ignore:aws-s3-enable-versioning
 resource "aws_s3_bucket" "bucket-with-logging" {
   bucket = "my-failing-bucket-no-encryption"
 
@@ -50,9 +53,10 @@ resource "aws_s3_bucket" "bucket-with-logging" {
   }
 }
 
+#tfsec:ignore:aws-s3-enable-versioning
 resource "aws_s3_bucket" "bucket-with-encryption-and-logging-but-public" {
   bucket = "my-public-bucket"
-  acl = "public-read"
+  acl    = "public-read"
 
   logging {
     target_bucket = data.aws_s3_bucket.acme-s3-access-logging.id
@@ -68,6 +72,7 @@ resource "aws_s3_bucket" "bucket-with-encryption-and-logging-but-public" {
   }
 }
 
+#tfsec:ignore:aws-s3-enable-versioning
 resource "aws_s3_bucket" "another-bucket-with-logging" {
   bucket = "my-failing-bucket-no-encryption"
 
@@ -77,9 +82,10 @@ resource "aws_s3_bucket" "another-bucket-with-logging" {
   }
 }
 
+#tfsec:ignore:aws-s3-enable-versioning
 resource "aws_s3_bucket" "not-another-public-one-please" {
   bucket = "my-public-bucket"
-  acl = "public-read"
+  acl    = "public-read"
 
   logging {
     target_bucket = data.aws_s3_bucket.acme-s3-access-logging.id
