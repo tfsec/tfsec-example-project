@@ -1,4 +1,3 @@
-
 resource "aws_s3_bucket" "acme_bucket" {
   bucket = var.bucket_name
 
