@@ -13,8 +13,3 @@ steps:
 - task: tfsec@0.1.2
   inputs:
     version: 'v1.21.0'
-- task: Trivy@0.1.0
-  inputs:
-    version: 'v0.28.0'
-
-
