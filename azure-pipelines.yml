@@ -10,6 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: tfsec
+  inputs:
+    version: '1.21.0'
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
