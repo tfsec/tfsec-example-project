@@ -10,9 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: tfsec@0.1.4
+- task: tfsec-task@0.1.4
   inputs:
     version: 'v1.21.0'
-- task: trivy@0.1.1
-  inputs:
-    version: 'v0.28.0'
+
