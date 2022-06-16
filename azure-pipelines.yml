@@ -13,3 +13,4 @@ steps:
 - task: tfsec@0.1.13
   inputs:
     version: 'v1.26.0'
+
