@@ -13,4 +13,4 @@ steps:
 - task: tfsec@0.1.23
   inputs:
     debug: true
-    #version: v1.26.0
+    version: v1.26.0
