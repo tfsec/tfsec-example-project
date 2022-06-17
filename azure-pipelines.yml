@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: tfsec@0.1.35
+- task: tfsec@0.1.36
   inputs:
     debug: true
     version: v1.26.0
