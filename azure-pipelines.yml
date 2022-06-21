@@ -12,5 +12,5 @@ pool:
 steps:
 - task: tfsec@1
   inputs:
-    debug: true
+    debug: false
     version: v1.26.0
