@@ -9,11 +9,15 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- task: trivy@0.1.16
-  inputs:
-    path: .
-    skipCleanup: true
-- task: trivy@0.1.16
-  inputs:
-    image: alpine:latest
+jobs:
+- job: A
+  steps:
+  - task: trivy@0.1.16
+    inputs:
+      path: .
+      skipCleanup: true
+- job: B
+  steps:
+  - task: trivy@0.1.16
+    inputs:
+      image: alpine:latest
