@@ -10,6 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: trivy@0.0.2
+- task: trivy@0.0.3
   inputs:
     path: .
