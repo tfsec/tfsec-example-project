@@ -10,8 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: tfsec@1
+- task: trivy@0
   inputs:
-    debug: false
-    version: v1.26.0
-    publishTestResults: false
+    path: .
