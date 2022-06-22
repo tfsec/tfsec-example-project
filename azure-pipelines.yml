@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: trivy@0.1.10
+- task: trivy@0.1.11
   inputs:
     path: .
     skipCleanup: true
