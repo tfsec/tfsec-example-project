@@ -12,12 +12,11 @@ pool:
 jobs:
 - job: A
   steps:
-  - task: trivy@0.1.16
+  - task: trivy@0.1.17
     inputs:
       path: .
-      skipCleanup: true
 - job: B
   steps:
-  - task: trivy@0.1.16
+  - task: trivy@0.1.17
     inputs:
-      image: alpine:latest
+      image: liamg/thisisfine
