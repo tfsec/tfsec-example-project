@@ -12,11 +12,11 @@ pool:
 jobs:
 - job: A
   steps:
-  - task: trivy@0.1.26
+  - task: trivy@0.1.27
     inputs:
       path: .
 - job: B
   steps:
-  - task: trivy@0.1.26
+  - task: trivy@0.1.27
     inputs:
       image: ubuntu
