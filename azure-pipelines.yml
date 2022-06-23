@@ -12,12 +12,12 @@ pool:
 jobs:
 - job: A
   steps:
-  - task: trivy@0.1.28
+  - task: trivy@0.1.29
     inputs:
       path: .
 - job: B
   steps:
-  - task: trivy@0.1.28
+  - task: trivy@0.1.29
     inputs:
       image: ubuntu
       docker: true
