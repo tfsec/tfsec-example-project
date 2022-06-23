@@ -19,4 +19,4 @@ jobs:
   steps:
   - task: trivy@0.1.26
     inputs:
-      image: liamg/thisisfine
+      image: ubuntu
