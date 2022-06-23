@@ -20,3 +20,4 @@ jobs:
   - task: trivy@0.1.28
     inputs:
       image: ubuntu
+      docker: true
