@@ -12,11 +12,11 @@ pool:
 jobs:
 - job: A
   steps:
-  - task: trivy@0.1.21
+  - task: trivy@0.1.22
     inputs:
       path: .
 - job: B
   steps:
-  - task: trivy@0.1.21
+  - task: trivy@0.1.22
     inputs:
       image: liamg/thisisfine
