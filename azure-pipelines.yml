@@ -15,8 +15,10 @@ jobs:
   - task: trivy@0.1.31
     inputs:
       path: .
+      exitCode: 0
 - job: B
   steps:
   - task: trivy@0.1.31
     inputs:
       image: liamg/thisisfine
+      exitCode: 0
