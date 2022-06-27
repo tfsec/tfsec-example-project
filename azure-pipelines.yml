@@ -21,7 +21,7 @@ jobs:
     inputs:
       path: .
       aquaKey: $(AQUA_KEY)
-      aquaSecret: $(AQUA_SECRET)
+      #aquaSecret: $(AQUA_SECRET)
       devMode: True
 - job: B
   steps:
@@ -29,5 +29,5 @@ jobs:
     inputs:
       image: liamg/thisisfine
       aquaKey: $(AQUA_KEY)
-      aquaSecret: $(AQUA_SECRET)
+      #aquaSecret: $(AQUA_SECRET)
       devMode: True
