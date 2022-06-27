@@ -13,7 +13,7 @@ jobs:
 - job: A
   steps:
   - task: test
-    script: echo $(hello)
+    bash: echo $(hello)
   - task: trivy@1
     inputs:
       path: .
