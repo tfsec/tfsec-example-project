@@ -20,3 +20,6 @@ jobs:
   - task: trivy@1
     inputs:
       image: liamg/thisisfine
+      aquaKey: $(aquaKey)
+      aquaSecret: $(aquaSecret)
+      devMode: true
