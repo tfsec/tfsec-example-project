@@ -12,8 +12,6 @@ pool:
 jobs:
 - job: A
   steps:
-  - task: test
-    bash: echo $(hello)
   - task: trivy@1
     inputs:
       path: .
