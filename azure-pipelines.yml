@@ -15,6 +15,9 @@ jobs:
   - task: trivy@1
     inputs:
       path: .
+      aquaKey: $(aquaKey)
+      aquaSecret: $(aquaSecret)
+      devMode: true
 - job: B
   steps:
   - task: trivy@1
