@@ -17,7 +17,7 @@ variables:
 jobs:
 - job: A
   steps:
-  - task: tfsec-dev@1
+  - task: tfsec@1
 - job: B
   steps:
   - task: trivy@1
