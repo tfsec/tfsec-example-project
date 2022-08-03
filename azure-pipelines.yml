@@ -21,6 +21,7 @@ jobs:
 - job: B
   steps:
   - task: trivy@1
+    displayName: vulnerabilities
     inputs:
       image: liamg/thisisfine
       aquaKey: $(AQUA_KEY)
